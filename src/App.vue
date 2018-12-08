@@ -1,23 +1,45 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <el-container>
+            <el-header></el-header>
+            <el-container>
+                <el-aside>
+                    <Sidebar></Sidebar>
+                </el-aside>
+                <el-main>
+                    <router-view></router-view>
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
 </template>
 
 <script>
+import Sidebar from "@/components/Sidebar.vue";
 export default {
-  name: 'App'
-}
+    name: "App",
+    components: {
+        Sidebar
+    }
+};
 </script>
 
-<style>
+<style lang="scss">
+@import "@/assets/css/global.scss";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    height: 100%;
+    width: 100%;
+}
+
+.el-row {
+    height: 100%;
+}
+.el-header{
+    background-color: #6d6d6d;
+}
+.el-container{
+    height: 100%;
 }
 </style>
+
+
